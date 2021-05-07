@@ -20,9 +20,12 @@ const NavBar = styled('div')`
 `;
 
 const NavButton = styled('button')`
+  margin-right: 10px;
   background-color: white;
   border: none;
   cursor: pointer;
+  font-size: 14px;
+  ${({ theme }) => theme.font.heavy}
   color: ${({ selected }) => selected ? '#6e26ec' : '#4b463e'};
 
   &:hover {

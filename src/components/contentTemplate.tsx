@@ -7,10 +7,14 @@ import Seo from '../components/seo';
 
 const Title = styled('h1')`
   font-size: 30px;
+
+  ${({ theme }) => theme.font.heavy}
 `;
 
 const Description = styled('p')`
   font-size: 16px;
+
+  ${({ theme }) => theme.font.book}
 `;
 
 const TopBlock = styled('section')`
@@ -35,7 +39,9 @@ const List = styled('div')`
   grid-template-columns: repeat(${({ columns }) => columns}, ${({ columns }) => 100 / columns}%);
   grid-template-rows: repeat(3, 40px);
   justify-content: space-between;
-  font-size: 20px;
+  font-size: 18px;
+
+  ${({ theme }) => theme.font.heavy}
 `;
 
 const Spacing = styled('div')`

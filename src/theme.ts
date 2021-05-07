@@ -3,6 +3,10 @@ export const theme = {
     purple: '#522e91',
     white: '#ffffff',
   },
+  font: {
+    book: `font-family: 'Avenir'; font-weight: 300;`,
+    heavy: `font-family: 'Avenir'; font-weight: 700;`,
+  },
   size: {},
   spacing: {
     layout: {
