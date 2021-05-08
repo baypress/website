@@ -68,7 +68,7 @@ const Header = ({ siteTitle }) => {
       <Spacing>
         <LogoAndContact>
           <Link to="/">
-            <StaticImage alt="logo" src={'../images/icon.svg'} width={61} height={42} formats={['AUTO', 'WEBP', 'AVIF', 'SVG']} />
+            <StaticImage alt="logo" placeholder="tracedSVG" src={'../images/icon.svg'} width={61} height={42} formats={['AUTO', 'WEBP', 'AVIF', 'SVG']} />
           </Link>
           <Link to={paths.contact}>
             <ContactButton>Contact us</ContactButton>
