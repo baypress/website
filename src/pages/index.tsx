@@ -65,14 +65,15 @@ const IndexPage = (props) => {
       <Seo title="Home" />
       <div style={{ display: "grid" }}>
         <StaticImage
-          // inline style because gatsby static image demands it :(
           style={{
             gridArea: "1/1",
-            maxHeight: '710px',
+            maxHeight: 'max(710px, 100vh - 290px)',
+            filter: 'brightness(62%) saturate(130%)',
           }}
+          placeholder="blurred"
           layout="fullWidth"
           alt="hero package"
-          src="../images/home-hero.jpg"
+          src="../images/home-hero2.jpg"
           formats={["webp", "avif"]}
         />
         <ContentContainer>
@@ -81,17 +82,17 @@ const IndexPage = (props) => {
             <CardContainer>
               <Card>
                 <CardBG />
-                <StaticImage alt="services" src="../images/designTestingWarehouse.svg" style={{ marginTop: '24px' }} />
+                <StaticImage alt="services" placeholder="tracedSVG" src="../images/designTestingWarehouse.svg" style={{ marginTop: '24px' }} />
                 <CardText>End-to-end service including design, testing, warehousing, and J.I.T. Delivery.</CardText>
               </Card>
               <Card>
                 <CardBG />
-                <StaticImage alt="solutions" src="../images/solutions.svg" style={{ marginTop: '24px' }} />
+                <StaticImage alt="solutions" placeholder="tracedSVG" src="../images/solutions.svg" style={{ marginTop: '24px' }} />
                 <CardText>Custom solutions for a variety of industries such as electronics, medical instruments, and food services.</CardText>
               </Card>
               <Card>
                 <CardBG />
-                <StaticImage alt="bay area" src="../images/bayArea.png" style={{ marginTop: '24px' }} />
+                <StaticImage alt="bay area" placeholder="tracedSVG" src="../images/bayArea.png" style={{ marginTop: '24px' }} />
                 <CardText>Proudly serving the Bay Area since 1993.</CardText>
               </Card>
             </CardContainer>
