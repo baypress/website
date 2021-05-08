@@ -5,7 +5,6 @@ const Container = styled('div')`
   display: flex;
   flex-wrap: nowrap;
   overflow: auto;
-  -webkit-overflow-scrolling property;
   -ms-overflow-style: -ms-autohiding-scrollbar;
 `;
 
