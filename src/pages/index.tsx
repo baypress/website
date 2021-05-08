@@ -1,29 +1,104 @@
-import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
+import styled from 'styled-components';
 
 import Layout from '../components/layout';
 import Seo from '../components/seo';
+
+const ContentContainer = styled('div')`
+  grid-area: 1/1;
+  position: relative;
+  display: grid;
+`;
+
+const Spacing = styled('div')`
+  width: 100%;
+  padding: ${({ theme }) => theme.spacing.layout.padding};
+  max-width: ${({ theme }) => theme.spacing.layout.maxWidth};
+  margin: ${({ theme }) => theme.spacing.layout.margin};
+`;
+
+const Title = styled('h1')`
+  margin-top: 2rem;
+  width: 530px;
+  font-size: 3.2rem;
+  color: ${({ theme }) => theme.color.white};
+
+  ${({ theme }) => theme.font.heavy}
+`;
+
+const CardContainer = styled('section')`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Card = styled('div')`
+  display: flex;
+  flex-direction: column;
+  height: 297px;
+  width: 291px;
+  padding: 0 24px;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const CardBG = styled(Card)`
+  position: absolute;
+  background-color: #522E91;
+  border-radius: 6px;
+  opacity: 70%;
+`;
+
+const CardText = styled('p')`
+  position: relative;
+  margin-bottom: 24px;
+  font-size: 16px;
+  opacity: 100%;
+  color: ${({ theme }) => theme.color.white};
+
+  ${({ theme }) => theme.font.heavy}
+`;
 
 const IndexPage = (props) => {
   return (
     <Layout>
       <Seo title="Home" />
-      <h1>Hi people</h1>
-      <StaticImage
-        src="../images/gatsby-astronaut.png"
-        width={300}
-        quality={95}
-        formats={['AUTO', 'WEBP', 'AVIF']}
-        alt="A Gatsby astronaut"
-        style={{ marginBottom: '1.45rem' }}
-      />
-      <p>
-        <Link to="/page-2/">Go to page 2</Link>
-        {' '}
-        <br />
-        <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-      </p>
+      <div style={{ display: "grid" }}>
+        <StaticImage
+          // inline style because gatsby static image demands it :(
+          style={{
+            gridArea: "1/1",
+            // page height - height of header and footer
+            height: 'calc(100vh - 290px)',
+          }}
+          layout="fullWidth"
+          alt="hero package"
+          src="../images/home-hero.jpg"
+          formats={["webp", "avif"]}
+        />
+        <ContentContainer>
+          <Spacing>
+            <Title>Custom packaging solutions & shipping supplies</Title>
+            <CardContainer>
+              <Card>
+                <CardBG />
+                <StaticImage alt="services" src="../images/designTestingWarehouse.svg" style={{ marginTop: '24px' }} />
+                <CardText>End-to-end service including design, testing, warehousing, and J.I.T. Delivery.</CardText>
+              </Card>
+              <Card>
+                <CardBG />
+                <StaticImage alt="solutions" src="../images/solutions.svg" style={{ marginTop: '24px' }} />
+                <CardText>Custom solutions for a variety of industries such as electronics, medical instruments, and food services.</CardText>
+              </Card>
+              <Card>
+                <CardBG />
+                <StaticImage alt="bay area" src="../images/bayArea.png" style={{ marginTop: '24px' }} />
+                <CardText>Proudly serving the Bay Area since 1993.</CardText>
+              </Card>
+            </CardContainer>
+          </Spacing>
+        </ContentContainer>
+      </div>
     </Layout>
   )
 };
