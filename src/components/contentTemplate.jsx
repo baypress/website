@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
+import { theme } from '../theme';
 import Carousel from '../components/carousel';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
@@ -9,18 +10,18 @@ const Title = styled('h1')`
   width: 260px;
   font-size: 30px;
 
-  ${({ theme }) => theme.font.heavy}
+  ${theme.font.heavy}
 `;
 
 const Description = styled('p')`
   font-size: 16px;
 
-  ${({ theme }) => theme.font.book}
+  ${theme.font.book}
 `;
 
 const TopBlock = styled('section')`
   background-color: #333231;
-  color: ${({ theme }) => theme.color.white};
+  color: ${theme.color.white};
 `;
 
 const HeaderContainer = styled('div')`
@@ -37,8 +38,8 @@ const TextBlock = styled('div')`
 `;
 
 const ListBlock = styled('section')`
-  color: ${({ theme }) => theme.color.white};
-  background-color: ${({ theme }) => theme.color.purple};
+  color: ${theme.color.white};
+  background-color: ${theme.color.purple};
 `;
 
 const List = styled('div')`
@@ -49,13 +50,13 @@ const List = styled('div')`
   justify-content: space-between;
   font-size: 18px;
 
-  ${({ theme }) => theme.font.heavy}
+  ${theme.font.heavy}
 `;
 
 const Spacing = styled('div')`
-  padding: ${({ theme }) => theme.spacing.layout.padding};
-  max-width: ${({ theme }) => theme.spacing.layout.maxWidth};
-  margin: ${({ theme }) => theme.spacing.layout.margin};
+  padding: ${theme.spacing.layout.padding};
+  max-width: ${theme.spacing.layout.maxWidth};
+  margin: ${theme.spacing.layout.margin};
 `;
 
 const ContentTemplate = (props) => {

@@ -1,12 +1,14 @@
 import { Link } from 'gatsby';
 import { StaticImage } from "gatsby-plugin-image";
-import React, { useState } from "react";
+import React from "react";
 import styled from 'styled-components';
 
+import { theme } from '../theme';
+
 const Spacing = styled('div')`
-  padding: ${({ theme }) => theme.spacing.layout.padding};
-  max-width: ${({ theme }) => theme.spacing.layout.maxWidth};
-  margin: ${({ theme }) => theme.spacing.layout.margin};
+  padding: ${theme.spacing.layout.padding};
+  max-width: ${theme.spacing.layout.maxWidth};
+  margin: ${theme.spacing.layout.margin};
 `;
 
 const LogoAndContact = styled('div')`
@@ -22,7 +24,7 @@ const NavButton = styled('button')`
   border: none;
   cursor: pointer;
   font-size: 14px;
-  ${({ theme }) => theme.font.heavy}
+  ${theme.font.heavy}
   color: ${({ selected }) => selected ? '#6e26ec' : '#4b463e'};
 
   &:hover {
@@ -32,18 +34,18 @@ const NavButton = styled('button')`
 
 const ContactButton = styled('button')`
   padding: 7px 18px;
-  background-color: ${({ theme }) => theme.color.orange};
-  color: ${({ theme }) => theme.color.white};
+  background-color: ${theme.color.orange};
+  color: ${theme.color.white};
   font-size: 16px;
   border: none;
   border-radius: 20px;
   cursor: pointer;
 
   &:hover {
-    background-color: ${({ theme }) => theme.color.activeOrange};
+    background-color: ${theme.color.activeOrange};
   }
 
-  ${({ theme }) => theme.font.heavy}
+  ${theme.font.heavy}
 `;
 
 const paths = {
@@ -56,7 +58,10 @@ const paths = {
 }
 
 const Header = ({ siteTitle }) => {
-  const [currentPath, setPath] = useState(window.location.pathname);
+  const isBrowser = typeof window !== "undefined";
+  if (!isBrowser) return null;
+
+  const currentPath = window.location.pathname;
 
   return (
     <header>
