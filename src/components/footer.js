@@ -66,7 +66,7 @@ const Footer = ({ siteTitle }) => (
   <Container>
     <LogoContainer>
       <Link to="/">
-        <StaticImage src="../images/bigLogo.svg" quality={100} />
+        <StaticImage alt="logo" src="../images/bigLogo.svg" quality={100} />
       </Link>
     </LogoContainer>
     <Address>

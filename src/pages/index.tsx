@@ -16,11 +16,10 @@ const Spacing = styled('div')`
   width: 100%;
   padding: ${theme.spacing.layout.padding};
   max-width: ${theme.spacing.layout.maxWidth};
-  margin: ${theme.spacing.layout.margin};
+  margin: 60px auto;
 `;
 
 const Title = styled('h1')`
-  margin-top: 2rem;
   width: 530px;
   font-size: 3.2rem;
   color: ${theme.color.white};
@@ -69,8 +68,7 @@ const IndexPage = (props) => {
           // inline style because gatsby static image demands it :(
           style={{
             gridArea: "1/1",
-            // page height - height of header and footer
-            height: 'calc(100vh - 290px)',
+            maxHeight: '710px',
           }}
           layout="fullWidth"
           alt="hero package"
