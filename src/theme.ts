@@ -14,7 +14,7 @@ export const theme = {
   spacing: {
     layout: {
       padding: '0 40px',
-      maxWidth: '980px',
+      maxWidth: '1020px',
       margin: 'auto',
     }
   }

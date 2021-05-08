@@ -8,13 +8,52 @@ import Seo from '../components/seo';
 const ContentContainer = styled('div')`
   grid-area: 1/1;
   position: relative;
-  place-items: center;
   display: grid;
+`;
+
+const Spacing = styled('div')`
+  width: 100%;
+  padding: ${({ theme }) => theme.spacing.layout.padding};
+  max-width: ${({ theme }) => theme.spacing.layout.maxWidth};
+  margin: ${({ theme }) => theme.spacing.layout.margin};
 `;
 
 const Title = styled('h1')`
   margin-top: 2rem;
   width: 530px;
+  font-size: 3.2rem;
+  color: ${({ theme }) => theme.color.white};
+
+  ${({ theme }) => theme.font.heavy}
+`;
+
+const CardContainer = styled('section')`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Card = styled('div')`
+  display: flex;
+  flex-direction: column;
+  height: 297px;
+  width: 291px;
+  padding: 0 24px;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const CardBG = styled(Card)`
+  position: absolute;
+  background-color: #522E91;
+  border-radius: 6px;
+  opacity: 70%;
+`;
+
+const CardText = styled('p')`
+  position: relative;
+  margin-bottom: 24px;
+  font-size: 16px;
+  opacity: 100%;
   color: ${({ theme }) => theme.color.white};
 
   ${({ theme }) => theme.font.heavy}
@@ -38,7 +77,26 @@ const IndexPage = (props) => {
           formats={["webp", "avif"]}
         />
         <ContentContainer>
-          <Title>Custom packaging solutions & shipping supplies</Title>
+          <Spacing>
+            <Title>Custom packaging solutions & shipping supplies</Title>
+            <CardContainer>
+              <Card>
+                <CardBG />
+                <StaticImage alt="services" src="../images/designTestingWarehouse.svg" style={{ marginTop: '24px' }} />
+                <CardText>End-to-end service including design, testing, warehousing, and J.I.T. Delivery.</CardText>
+              </Card>
+              <Card>
+                <CardBG />
+                <StaticImage alt="solutions" src="../images/solutions.svg" style={{ marginTop: '24px' }} />
+                <CardText>Custom solutions for a variety of industries such as electronics, medical instruments, and food services.</CardText>
+              </Card>
+              <Card>
+                <CardBG />
+                <StaticImage alt="bay area" src="../images/bayArea.png" style={{ marginTop: '24px' }} />
+                <CardText>Proudly serving the Bay Area since 1993.</CardText>
+              </Card>
+            </CardContainer>
+          </Spacing>
         </ContentContainer>
       </div>
     </Layout>
