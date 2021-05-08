@@ -1,16 +1,11 @@
-import { graphql, useStaticQuery } from "gatsby"
-import PropTypes from "prop-types"
-import * as React from "react"
-import styled from 'styled-components';
+import { graphql, useStaticQuery } from "gatsby";
+import PropTypes from "prop-types";
+import React from "react";
 
-import Header from "./header"
+import Footer from './footer';
+import Header from "./header";
 
-import "./layout.css"
-
-const Footer = styled('div')`
-  background-color: blue;
-  marginTop: 2rem;
-`;
+import "./layout.css";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -27,9 +22,7 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <main>{children}</main>
-      <Footer>
-        footer here
-      </Footer>
+      <Footer />
     </>
   )
 }

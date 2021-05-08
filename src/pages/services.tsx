@@ -22,24 +22,23 @@ const list = {
 } as const;
 
 const carouselImages = [
-  <ImgContainer><StaticImage alt='box1' key="b1" width={600} height={320} src='../images/supplies/1.jpg' /></ImgContainer>,
-  <ImgContainer><StaticImage alt='box2' key="b2" width={600} height={320} src='../images/supplies/2.jpg' /></ImgContainer>,
-  <ImgContainer><StaticImage alt='box3' key="b3" width={600} height={320} src='../images/supplies/3.jpg' /></ImgContainer>,
-  <ImgContainer><StaticImage alt='box4' key="b4" width={600} height={320} src='../images/supplies/4.jpg' /></ImgContainer>,
-  <ImgContainer><StaticImage alt='box5' key="b5" width={600} height={320} src='../images/supplies/5.jpg' /></ImgContainer>,
+  <ImgContainer key="b1"><StaticImage alt='box1' width={600} height={320} src='../images/supplies/1.jpg' /></ImgContainer>,
+  <ImgContainer key="b2"><StaticImage alt='box2' width={600} height={320} src='../images/supplies/2.jpg' /></ImgContainer>,
+  <ImgContainer key="b3"><StaticImage alt='box3' width={600} height={320} src='../images/supplies/3.jpg' /></ImgContainer>,
+  <ImgContainer key="b4"><StaticImage alt='box4' width={600} height={320} src='../images/supplies/4.jpg' /></ImgContainer>,
+  <ImgContainer key="b5"><StaticImage alt='box5' width={600} height={320} src='../images/supplies/5.jpg' /></ImgContainer>,
 ];
 
 const title = 'Services';
 const description = `We provide sensible solutions and superior services from packaging design, ISTA testing, fast prototyping, mass production, assembly, to warehousing, inventory management and delivery. You can count on us from beginning of a project to delivery of the packaging products.`;
 const HeroImage = (
   <StaticImage
-    src="../images/gatsby-astronaut.png"
-    width={240}
+    src="../images/supplies/1.jpg"
+    height={360}
+    width={400}
     quality={100}
-    flex={1}
     formats={['AUTO', 'WEBP', 'AVIF']}
-    alt="A Gatsby astronaut"
-    style={{ marginBottom: '1.2rem', flex: 1, padding: '1rem' }}
+    alt="Services"
   />
 );
 

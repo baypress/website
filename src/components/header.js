@@ -1,6 +1,6 @@
-import React, { useState } from "react";
 import { Link } from 'gatsby';
 import { StaticImage } from "gatsby-plugin-image";
+import React, { useState } from "react";
 import styled from 'styled-components';
 
 const Spacing = styled('div')`
@@ -16,11 +16,8 @@ const LogoAndContact = styled('div')`
   align-items: center;
 `;
 
-const NavBar = styled('div')`
-`;
-
 const NavButton = styled('button')`
-  margin-right: 10px;
+  margin-right: 30px;
   background-color: white;
   border: none;
   cursor: pointer;
@@ -31,6 +28,22 @@ const NavButton = styled('button')`
   &:hover {
     color: #6e26ec;
   }
+`;
+
+const ContactButton = styled('button')`
+  padding: 7px 18px;
+  background-color: ${({ theme }) => theme.color.orange};
+  color: ${({ theme }) => theme.color.white};
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.color.activeOrange};
+  }
+
+  ${({ theme }) => theme.font.heavy}
 `;
 
 const paths = {
@@ -50,13 +63,13 @@ const Header = ({ siteTitle }) => {
       <Spacing>
         <LogoAndContact>
           <Link to="/">
-            <StaticImage src={'../images/icon.svg'} width={61} height={42} formats={['AUTO', 'WEBP', 'AVIF', 'SVG']} />
+            <StaticImage alt="logo" src={'../images/icon.svg'} width={61} height={42} formats={['AUTO', 'WEBP', 'AVIF', 'SVG']} />
           </Link>
           <Link to={paths.contact}>
-            <button>Contact us</button>
+            <ContactButton>Contact us</ContactButton>
           </Link>
         </LogoAndContact>
-        <NavBar>
+        <div>
           <Link to={paths.custom}>
             <NavButton selected={currentPath === paths.custom}>Custom Packaging & Print</NavButton>
           </Link>
@@ -72,7 +85,7 @@ const Header = ({ siteTitle }) => {
           <Link to={paths.about}>
             <NavButton selected={currentPath === paths.about}>About Us</NavButton>
           </Link>
-        </NavBar>
+        </div>
       </Spacing>
     </header >
   );

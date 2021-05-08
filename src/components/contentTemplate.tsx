@@ -6,6 +6,7 @@ import Layout from '../components/layout';
 import Seo from '../components/seo';
 
 const Title = styled('h1')`
+  width: 260px;
   font-size: 30px;
 
   ${({ theme }) => theme.font.heavy}
@@ -18,7 +19,6 @@ const Description = styled('p')`
 `;
 
 const TopBlock = styled('section')`
-  padding-top: 1.45rem;
   background-color: #333231;
   color: ${({ theme }) => theme.color.white};
 `;
@@ -26,6 +26,14 @@ const TopBlock = styled('section')`
 const HeaderContainer = styled('div')`
   display: flex;
   max-height: 10%;
+`;
+
+const TextBlock = styled('div')`
+  display: flex;
+  flex: 1 1 0%;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 1rem;
 `;
 
 const ListBlock = styled('section')`
@@ -53,14 +61,14 @@ const Spacing = styled('div')`
 const ContentTemplate = (props) => {
   return (
     <Layout>
-      <Seo title="Custom Packaging & Print" />
+      <Seo title={props.title} />
       <TopBlock>
         <Spacing>
           <HeaderContainer>
-            <section style={{ flex: 1, marginRight: '1rem' }}>
+            <TextBlock>
               <Title>{props.title}</Title>
               <Description>{props.description}</Description>
-            </section>
+            </TextBlock>
             {props.heroImage}
           </HeaderContainer>
         </Spacing>
