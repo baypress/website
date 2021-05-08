@@ -2,6 +2,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
 
+import { theme } from '../theme';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 
@@ -13,18 +14,18 @@ const ContentContainer = styled('div')`
 
 const Spacing = styled('div')`
   width: 100%;
-  padding: ${({ theme }) => theme.spacing.layout.padding};
-  max-width: ${({ theme }) => theme.spacing.layout.maxWidth};
-  margin: ${({ theme }) => theme.spacing.layout.margin};
+  padding: ${theme.spacing.layout.padding};
+  max-width: ${theme.spacing.layout.maxWidth};
+  margin: ${theme.spacing.layout.margin};
 `;
 
 const Title = styled('h1')`
   margin-top: 2rem;
   width: 530px;
   font-size: 3.2rem;
-  color: ${({ theme }) => theme.color.white};
+  color: ${theme.color.white};
 
-  ${({ theme }) => theme.font.heavy}
+  ${theme.font.heavy}
 `;
 
 const CardContainer = styled('section')`
@@ -54,9 +55,9 @@ const CardText = styled('p')`
   margin-bottom: 24px;
   font-size: 16px;
   opacity: 100%;
-  color: ${({ theme }) => theme.color.white};
+  color: ${theme.color.white};
 
-  ${({ theme }) => theme.font.heavy}
+  ${theme.font.heavy}
 `;
 
 const IndexPage = (props) => {

@@ -3,16 +3,18 @@ import { StaticImage } from 'gatsby-plugin-image';
 import React from "react";
 import styled from 'styled-components';
 
+import { theme } from '../theme';
+
 const Container = styled('div')`
   display: flex;
   align-items: center;
   height: 190px;
-  padding: ${({ theme }) => theme.spacing.layout.padding};
-  max-width: ${({ theme }) => theme.spacing.layout.maxWidth};
-  margin: ${({ theme }) => theme.spacing.layout.margin};
-  background-color: ${({ theme }) => theme.color.white};
+  padding: ${theme.spacing.layout.padding};
+  max-width: ${theme.spacing.layout.maxWidth};
+  margin: ${theme.spacing.layout.margin};
+  background-color: ${theme.color.white};
 
-  color: ${({ theme }) => theme.color.darkPurple};
+  color: ${theme.color.darkPurple};
 `;
 
 const LogoContainer = styled('div')`
@@ -28,15 +30,15 @@ const Address = styled('div')`
 `;
 
 const Line1 = styled('div')`
-  ${({ theme }) => theme.font.heavy}
+  ${theme.font.heavy}
 `;
 
 const Line2 = styled('div')`
-  ${({ theme }) => theme.font.book}
+  ${theme.font.book}
 `;
 
 const Line3 = styled('div')`
-  ${({ theme }) => theme.font.book}
+  ${theme.font.book}
 `;
 
 const ContactContainer = styled('div')`
@@ -50,14 +52,14 @@ const ContactTitle = styled('div')`
   font-size: 14px;
   margin-bottom: 12px;
 
-  ${({ theme }) => theme.font.heavy}
+  ${theme.font.heavy}
 `;
 
 const ContactNumber = styled('div')`
   font-size: 20px;
   margin-bottom: 12px;
 
-  ${({ theme }) => theme.font.book}
+  ${theme.font.book}
 `;
 
 const Footer = ({ siteTitle }) => (
