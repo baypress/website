@@ -76,16 +76,32 @@ const FormContainer = styled('div')`
     ". submit";
 `;
 
-const Input = styled('input')`
-  grid-area: ${({ gridArea }) => gridArea};
+const FormItemStyle = ({ gridArea, invalid }) => `
+  grid-area: ${gridArea};
   height: 44px;
   margin: 0 25px 25px 0;
   padding-left: 15px;
   border: none;
   border-radius: 4px;
   font-size: 16px;
+  outline-color: red;
+  outline-offset: 0px;
+  outline-style: auto;
+  outline-width: ${invalid ? '1px' : '0'};
 
   ${theme.font.book}
+`
+
+const Input = styled('input')`
+  ${({ gridArea, invalid }) => FormItemStyle({ gridArea, invalid })};
+`;
+
+const Textarea = styled('textarea')`
+  ${({ gridArea, invalid }) => FormItemStyle({ gridArea, invalid })};
+
+  height: 165px;
+  padding: 15px;
+  resize: vertical;
 `;
 
 const Submit = styled('input')`
@@ -109,19 +125,23 @@ const Submit = styled('input')`
 `;
 
 const EmailForm = () => {
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit, watch, formState: { errors } } = useForm({
+    mode: 'onTouched',
+    shouldFocusError: true
+  });
   const onSubmit = data => console.log('fire off req here');
+  console.log('errors', errors.email)
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <FormContainer>
-        <Input placeholder="First name" gridArea="first" {...register("firstName")} />
-        <Input placeholder="Last name" gridArea="last" {...register("lastName")} />
-        <Input placeholder="Phone" gridArea="phone" {...register("phone")} />
-        <Input placeholder="Email" gridArea="email" {...register("email")} />
-        <Input placeholder="Company name" gridArea="company" {...register("companyName")} />
-        <Input placeholder="Project name" gridArea="project" {...register("projectName")} />
-        <Input placeholder="Brief description of your request." gridArea="details" {...register("details", { required: true })} />
+        <Input placeholder="First name" gridArea="first" invalid={errors.firstName} {...register("firstName", { required: true })} />
+        <Input placeholder="Last name" gridArea="last" invalid={errors.lastName} {...register("lastName", { required: true })} />
+        <Input placeholder="Phone - Optional" gridArea="phone" {...register("phone")} />
+        <Input placeholder="Email" gridArea="email" invalid={errors.email} {...register('email', { required: true, pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/ })} />
+        <Input placeholder="Company name - Optional" gridArea="company" {...register("companyName")} />
+        <Input placeholder="Project name - Optional" gridArea="project" {...register("projectName")} />
+        <Textarea placeholder="Brief description of your request." gridArea="details" invalid={errors.details} {...register("details", { required: true })} />
         {errors.description && <span>This field is required</span>}
         <Submit type="submit" />
       </FormContainer>
@@ -144,6 +164,7 @@ const ContactUs = (props) => {
             <LocationBlock>
               <LocationTitle>We are located at</LocationTitle>
               <LocationDescription>568 South Milpitas Blvd.<br></br>Milpitas, CA 95035</LocationDescription>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.4659513923857!2d-121.89650368504046!3d37.42609597982444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fced1bb864b31%3A0xed4a5c25a6842da1!2s568%20S%20Milpitas%20Blvd%2C%20Milpitas%2C%20CA%2095035!5e0!3m2!1sen!2sus!4v1620576565781!5m2!1sen!2sus" width="250" height="250" style={{ border: '0' }} loading="lazy" />
             </LocationBlock>
           </HeaderContainer>
         </Spacing>
