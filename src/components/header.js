@@ -1,8 +1,8 @@
 import { Link } from 'gatsby';
-import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import styled from 'styled-components';
 
+import LogoSvg from '../images/icon.svg';
 import { theme } from '../theme';
 
 const Spacing = styled('div')`
@@ -68,7 +68,7 @@ const Header = ({ siteTitle }) => {
       <Spacing>
         <LogoAndContact>
           <Link to="/">
-            <StaticImage alt="logo" placeholder="tracedSVG" src={'../images/icon.svg'} width={61} height={42} formats={['AUTO', 'WEBP', 'AVIF', 'SVG']} />
+            <LogoSvg />
           </Link>
           <Link to={paths.contact}>
             <ContactButton>Contact us</ContactButton>

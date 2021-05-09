@@ -6,6 +6,10 @@ import { theme } from '../theme';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 
+import DesignSvg from '../images/designTestingWarehouse.svg';
+import SolutionsSvg from '../images/solutions.svg';
+import LocationSvg from '../images/location.svg';
+
 const ContentContainer = styled('div')`
   grid-area: 1/1;
   position: relative;
@@ -59,6 +63,23 @@ const CardText = styled('p')`
   ${theme.font.heavy}
 `;
 
+const iconStyle = `
+  position: relative;
+  margin-top: 24px;
+`;
+
+const DesignIcon = styled(DesignSvg)`
+  ${iconStyle}
+`;
+
+const SolutionsIcon = styled(SolutionsSvg)`
+  ${iconStyle}
+`;
+
+const LocationIcon = styled(LocationSvg)`
+  ${iconStyle}
+`;
+
 const IndexPage = (props) => {
   return (
     <Layout>
@@ -82,17 +103,17 @@ const IndexPage = (props) => {
             <CardContainer>
               <Card>
                 <CardBG />
-                <StaticImage alt="services" placeholder="tracedSVG" src="../images/designTestingWarehouse.svg" style={{ marginTop: '24px' }} />
+                <DesignIcon />
                 <CardText>End-to-end service including design, testing, warehousing, and J.I.T. Delivery.</CardText>
               </Card>
               <Card>
                 <CardBG />
-                <StaticImage alt="solutions" placeholder="tracedSVG" src="../images/solutions.svg" style={{ marginTop: '24px' }} />
+                <SolutionsIcon />
                 <CardText>Custom solutions for a variety of industries such as electronics, medical instruments, and food services.</CardText>
               </Card>
               <Card>
                 <CardBG />
-                <StaticImage alt="bay area" placeholder="tracedSVG" src="../images/bayArea.png" style={{ marginTop: '24px' }} />
+                <LocationIcon />
                 <CardText>Proudly serving the Bay Area since 1993.</CardText>
               </Card>
             </CardContainer>
