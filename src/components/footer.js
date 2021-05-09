@@ -1,9 +1,9 @@
 import { Link } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
 import React from "react";
 import styled from 'styled-components';
 
 import { theme } from '../theme';
+import BigLogoSvg from '../images/bigLogo.svg';
 
 const Container = styled('div')`
   display: flex;
@@ -66,7 +66,7 @@ const Footer = ({ siteTitle }) => (
   <Container>
     <LogoContainer>
       <Link to="/">
-        <StaticImage alt="logo" placeholder="tracedSVG" src="../images/bigLogo.svg" quality={100} />
+        <BigLogoSvg />
       </Link>
     </LogoContainer>
     <Address>
