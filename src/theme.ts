@@ -5,6 +5,7 @@ export const theme = {
     purple: '#522e91',
     darkPurple: '#2D0D65',
     white: '#ffffff',
+    black: '#000000',
   },
   font: {
     book: `font-family: 'Avenir'; font-weight: 300;`,
