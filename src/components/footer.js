@@ -10,6 +10,7 @@ const Container = styled('div')`
   align-items: center;
   height: 190px;
   padding: ${theme.spacing.layout.padding};
+  width: 100%;
   max-width: ${theme.spacing.layout.maxWidth};
   margin: ${theme.spacing.layout.margin};
   background-color: ${theme.color.white};
