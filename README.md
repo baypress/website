@@ -6,7 +6,9 @@ This is the repo for baypress.com.
 
 ### Tech ###
 
-It's built on gatsby with react and deployed to gatsby-cloud hosting. We're using styled-components for styling and have built a custom theme.
+The site is built on gatsby with react and deployed to gatsby-cloud hosting.
+We're using styled-components for styling and have built a custom theme.
+We're using Form Spree for the contact form.
 
 ## 🚀 Quick start
 
