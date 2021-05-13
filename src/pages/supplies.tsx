@@ -52,8 +52,8 @@ const description = `We have over 20 years experience in providing custom protec
 const HeroImage = (
   <StaticImage
     src="../images/supplies/1.jpg"
-    height={360}
-    width={400}
+    height={300}
+    aspectRatio={3 / 2}
     quality={100}
     formats={['AUTO', 'WEBP', 'AVIF']}
     alt="Services"

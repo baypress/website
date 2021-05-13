@@ -30,7 +30,7 @@ const carouselImages = [
 ];
 
 const title = 'Industrial Packaging';
-const description = `Bay Press and Packaging has years of experience in product packaging, display, and printing services. We have many choices of material and technologies to satisfy our customer's needs.`;
+const description = `With multi-material packaging design ability, we provide our clients with sensible packaging solutions optimized for each project no matter if it is for product transportation, material handling, or storage. We provide complete services from design, prototyping, ISTA testing, manufacturing, kitting, to inventory management.`;
 const HeroImage = (
   <StaticImage
     src="../images/supplies/1.jpg"

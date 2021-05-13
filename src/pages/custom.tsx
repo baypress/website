@@ -41,8 +41,8 @@ const description = `Bay Press and Packaging has years of experience in product 
 const HeroImage = (
   <StaticImage
     src="../images/custom/1.jpg"
-    height={360}
-    width={400}
+    height={300}
+    aspectRatio={3 / 2}
     quality={100}
     formats={['AUTO', 'WEBP', 'AVIF']}
     alt="Services"
