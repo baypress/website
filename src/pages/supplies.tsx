@@ -7,6 +7,9 @@ import ContentTemplate from '../components/contentTemplate';
 const ImgContainer = styled('div')`
   display: flex;
   flex: 0 0 auto;
+
+  width: 750px;
+  height: 500px;
 `;
 
 const list = {
@@ -28,20 +31,20 @@ const list = {
 } as const;
 
 const carouselImages = [
-  <ImgContainer key="s1"><StaticImage alt='' width={900} height={420} src='../images/supplies/1.jpg' /></ImgContainer>,
-  <ImgContainer key="s2"><StaticImage alt='' width={900} height={420} src='../images/supplies/2.jpg' /></ImgContainer>,
-  <ImgContainer key="s3"><StaticImage alt='' width={900} height={420} src='../images/supplies/3.jpg' /></ImgContainer>,
-  <ImgContainer key="s4"><StaticImage alt='' width={900} height={420} src='../images/supplies/4.jpg' /></ImgContainer>,
-  <ImgContainer key="s5"><StaticImage alt='' width={900} height={420} src='../images/supplies/5.jpg' /></ImgContainer>,
-  <ImgContainer key="s6"><StaticImage alt='' width={900} height={420} src='../images/supplies/6.jpg' /></ImgContainer>,
-  <ImgContainer key="s7"><StaticImage alt='' width={900} height={420} src='../images/supplies/7.jpg' /></ImgContainer>,
-  <ImgContainer key="s8"><StaticImage alt='' width={900} height={420} src='../images/supplies/8.jpg' /></ImgContainer>,
-  <ImgContainer key="s9"><StaticImage alt='' width={900} height={420} src='../images/supplies/9.jpg' /></ImgContainer>,
-  <ImgContainer key="s10"><StaticImage alt='' width={900} height={420} src='../images/supplies/10.jpg' /></ImgContainer>,
-  <ImgContainer key="s11"><StaticImage alt='' width={900} height={420} src='../images/supplies/11.jpg' /></ImgContainer>,
-  <ImgContainer key="s12"><StaticImage alt='' width={900} height={420} src='../images/supplies/12.jpg' /></ImgContainer>,
-  <ImgContainer key="s13"><StaticImage alt='' width={900} height={420} src='../images/supplies/13.jpg' /></ImgContainer>,
-  <ImgContainer key="s14"><StaticImage alt='' width={900} height={420} src='../images/supplies/14.jpg' /></ImgContainer>,
+  <ImgContainer key="s1"><StaticImage alt='' aspectRatio={3 / 2} src='../images/supplies/1.jpg' /></ImgContainer>,
+  <ImgContainer key="s2"><StaticImage alt='' aspectRatio={3 / 2} src='../images/supplies/2.jpg' /></ImgContainer>,
+  <ImgContainer key="s3"><StaticImage alt='' aspectRatio={3 / 2} src='../images/supplies/3.jpg' /></ImgContainer>,
+  <ImgContainer key="s4"><StaticImage alt='' aspectRatio={3 / 2} src='../images/supplies/4.jpg' /></ImgContainer>,
+  <ImgContainer key="s5"><StaticImage alt='' aspectRatio={3 / 2} src='../images/supplies/5.jpg' /></ImgContainer>,
+  <ImgContainer key="s6"><StaticImage alt='' aspectRatio={3 / 2} src='../images/supplies/6.jpg' /></ImgContainer>,
+  <ImgContainer key="s7"><StaticImage alt='' aspectRatio={3 / 2} src='../images/supplies/7.jpg' /></ImgContainer>,
+  <ImgContainer key="s8"><StaticImage alt='' aspectRatio={3 / 2} src='../images/supplies/8.jpg' /></ImgContainer>,
+  <ImgContainer key="s9"><StaticImage alt='' aspectRatio={3 / 2} src='../images/supplies/9.jpg' /></ImgContainer>,
+  <ImgContainer key="s10"><StaticImage alt='' aspectRatio={3 / 2} src='../images/supplies/10.jpg' /></ImgContainer>,
+  <ImgContainer key="s11"><StaticImage alt='' aspectRatio={3 / 2} src='../images/supplies/11.jpg' /></ImgContainer>,
+  <ImgContainer key="s12"><StaticImage alt='' aspectRatio={3 / 2} src='../images/supplies/12.jpg' /></ImgContainer>,
+  <ImgContainer key="s13"><StaticImage alt='' aspectRatio={3 / 2} src='../images/supplies/13.jpg' /></ImgContainer>,
+  <ImgContainer key="s14"><StaticImage alt='' aspectRatio={3 / 2} src='../images/supplies/14.jpg' /></ImgContainer>,
 ];
 
 const title = 'Shipping Supplies';
