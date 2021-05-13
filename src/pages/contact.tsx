@@ -147,9 +147,7 @@ const EmailForm = ({ handleSubmit, isEmailInvalid, isSubmitting }) => (
 );
 
 const ContactUs = (props) => {
-
-  const [state, handleSubmit] = useForm(process.env.GATSBY_FORM_SPREE_PROJECT_ID || '');
-  console.log('GATSBY_FORM_SPREE_PROJECT_ID', process.env.GATSBY_FORM_SPREE_PROJECT_ID)
+  const [state, handleSubmit] = useForm(process.env.GATSBY_FORM_SPREE_PROJECT_ID);
 
   const isEmailInvalid = state.errors.length ? state.errors[state.errors.length - 1]?.field === 'email' : false;
 
