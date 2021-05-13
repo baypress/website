@@ -7,6 +7,9 @@ import ContentTemplate from '../components/contentTemplate';
 const ImgContainer = styled('div')`
   display: flex;
   flex: 0 0 auto;
+
+  width: 750px;
+  height: 500px;
 `;
 
 const list = {
@@ -27,20 +30,19 @@ const list = {
 } as const;
 
 const carouselImages = [
-  <ImgContainer key="b1" ><StaticImage alt='box1' width={900} layout="fixed" height={420} src='../images/supplies/1.jpg' /></ImgContainer>,
-  <ImgContainer key="b2" ><StaticImage alt='box2' width={900} layout="fixed" height={420} src='../images/supplies/2.jpg' /></ImgContainer>,
-  <ImgContainer key="b3" ><StaticImage alt='box3' width={900} layout="fixed" height={420} src='../images/supplies/3.jpg' /></ImgContainer>,
-  <ImgContainer key="b4" ><StaticImage alt='box4' width={900} layout="fixed" height={420} src='../images/supplies/4.jpg' /></ImgContainer>,
-  <ImgContainer key="b5" ><StaticImage alt='box5' width={900} layout="fixed" height={420} src='../images/supplies/5.jpg' /></ImgContainer>,
+  <ImgContainer key="c1"><StaticImage alt='' aspectRatio={3 / 2} src='../images/custom/1.jpg' /></ImgContainer>,
+  <ImgContainer key="c2"><StaticImage alt='' aspectRatio={3 / 2} src='../images/custom/2.jpg' /></ImgContainer>,
+  <ImgContainer key="c3"><StaticImage alt='' aspectRatio={3 / 2} src='../images/custom/3.jpg' /></ImgContainer>,
+  <ImgContainer key="c4"><StaticImage alt='' aspectRatio={3 / 2} src='../images/custom/4.jpg' /></ImgContainer>,
 ];
 
 const title = 'Custom Packaging & Print';
 const description = `Bay Press and Packaging has years of experience in product packaging, display, and printing services. We have many choices of material and technologies to satisfy our customer's needs.`;
 const HeroImage = (
   <StaticImage
-    src="../images/supplies/1.jpg"
-    height={360}
-    width={400}
+    src="../images/custom/1.jpg"
+    height={300}
+    aspectRatio={3 / 2}
     quality={100}
     formats={['AUTO', 'WEBP', 'AVIF']}
     alt="Services"
