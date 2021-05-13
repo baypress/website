@@ -147,9 +147,11 @@ const EmailForm = ({ handleSubmit, isEmailInvalid, isSubmitting }) => (
 );
 
 const ContactUs = (props) => {
-  const [state, handleSubmit] = useForm(process.env.FORM_SPREE_PROJECT_ID);
 
-  const isEmailInvalid = state.errors.length ? state.errors[state.errors.length - 1]?.field === 'email' : false;
+  // const [state, handleSubmit] = useForm(process.env.FORM_SPREE_PROJECT_ID);
+  console.log('haha', process.env.FORM_SPREE_PROJECT_ID)
+
+  // const isEmailInvalid = state.errors.length ? state.errors[state.errors.length - 1]?.field === 'email' : false;
 
   return (
     <Layout>
@@ -158,15 +160,15 @@ const ContactUs = (props) => {
         <Spacing>
           <HeaderContainer>
             <TextBlock>
-              {state.succeeded ? (
+              {/* {state.succeeded ? (
                 <ContactSuccess>Thanks for reaching out!</ContactSuccess>
-              ) : (
-                <>
-                  <Title>Contact us</Title>
-                  <Description><strong>Fill out this form</strong> or email <MailToLink href="mailto:contact@baypress.com">contact@baypress.com</MailToLink>.</Description>
-                  <EmailForm handleSubmit={handleSubmit} isEmailInvalid={isEmailInvalid} isSubmitting={state.submitting} />
-                </>
-              )}
+              ) : ( */}
+              <>
+                <Title>Contact us</Title>
+                <Description><strong>Fill out this form</strong> or email <MailToLink href="mailto:contact@baypress.com">contact@baypress.com</MailToLink>.</Description>
+                {/* <EmailForm handleSubmit={handleSubmit} isEmailInvalid={isEmailInvalid} isSubmitting={state.submitting} /> */}
+              </>
+              {/* )} */}
             </TextBlock>
             <LocationBlock>
               <LocationTitle>We are located at</LocationTitle>
