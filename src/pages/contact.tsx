@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { useForm } from "react-hook-form";
+import { useForm, ValidationError } from '@formspree/react';
+import React from 'react';
 import styled from 'styled-components';
 
 import Layout from '../components/layout';
@@ -124,32 +124,33 @@ const Submit = styled('input')`
   ${theme.font.heavy}
 `;
 
-const EmailForm = () => {
-  const { register, handleSubmit, watch, formState: { errors } } = useForm({
-    mode: 'onTouched',
-    shouldFocusError: true
-  });
-  const onSubmit = data => console.log('fire off req here');
-  console.log('errors', errors.email)
+const ContactSuccess = styled('h1')`
+  align-self: center;
+  color: #ffc77a;
 
-  return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <FormContainer>
-        <Input placeholder="First name" gridArea="first" invalid={errors.firstName} {...register("firstName", { required: true })} />
-        <Input placeholder="Last name" gridArea="last" invalid={errors.lastName} {...register("lastName", { required: true })} />
-        <Input placeholder="Phone - Optional" gridArea="phone" {...register("phone")} />
-        <Input placeholder="Email" gridArea="email" invalid={errors.email} {...register('email', { required: true, pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/ })} />
-        <Input placeholder="Company name - Optional" gridArea="company" {...register("companyName")} />
-        <Input placeholder="Project name - Optional" gridArea="project" {...register("projectName")} />
-        <Textarea placeholder="Brief description of your request." gridArea="details" invalid={errors.details} {...register("details", { required: true })} />
-        {errors.description && <span>This field is required</span>}
-        <Submit type="submit" />
-      </FormContainer>
-    </form>
-  );
-};
+  ${theme.font.heavy}
+`;
+
+const EmailForm = ({ handleSubmit, isEmailInvalid, isSubmitting }) => (
+  <form onSubmit={handleSubmit}>
+    <FormContainer>
+      <Input id="firstName" name="firstName" placeholder="First name" gridArea="first" />
+      <Input id="lastName" name="lastName" placeholder="Last name" gridArea="last" />
+      <Input id="phone" name="phone" type="tel" placeholder="Phone - Optional" gridArea="phone" />
+      <Input id="email" name="email" type="email" invalid={isEmailInvalid} placeholder="Email" gridArea="email" />
+      <Input id="company" name="company" placeholder="Company name - Optional" gridArea="company" />
+      <Input id="project" name="project" placeholder="Project name - Optional" gridArea="project" />
+      <Textarea id="details" name="details" placeholder="Brief description of your request." gridArea="details" />
+      <Submit type="submit" disabled={isSubmitting} />
+    </FormContainer>
+  </form>
+);
 
 const ContactUs = (props) => {
+  const [state, handleSubmit] = useForm(process.env.FORM_SPREE_PROJECT_ID);
+
+  const isEmailInvalid = state.errors.length ? state.errors[state.errors.length - 1]?.field === 'email' : false;
+
   return (
     <Layout>
       <Seo title="Contact us" />
@@ -157,9 +158,15 @@ const ContactUs = (props) => {
         <Spacing>
           <HeaderContainer>
             <TextBlock>
-              <Title>Contact us</Title>
-              <Description><strong>Fill out this form</strong> or email <MailToLink href="mailto:contact@baypress.com">contact@baypress.com</MailToLink>.</Description>
-              <EmailForm />
+              {state.succeeded ? (
+                <ContactSuccess>Thanks for reaching out!</ContactSuccess>
+              ) : (
+                <>
+                  <Title>Contact us</Title>
+                  <Description><strong>Fill out this form</strong> or email <MailToLink href="mailto:contact@baypress.com">contact@baypress.com</MailToLink>.</Description>
+                  <EmailForm handleSubmit={handleSubmit} isEmailInvalid={isEmailInvalid} isSubmitting={state.submitting} />
+                </>
+              )}
             </TextBlock>
             <LocationBlock>
               <LocationTitle>We are located at</LocationTitle>
