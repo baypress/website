@@ -83,7 +83,7 @@ const ContentTemplate = (props) => {
           </List>
         </Spacing>
       </ListBlock>
-      <Carousel images={props.carouselImages} />
+      <Carousel images={props.carouselImages} height={props.imageHeight} />
     </Layout>
   )
 };

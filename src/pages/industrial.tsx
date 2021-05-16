@@ -7,6 +7,8 @@ import ContentTemplate from '../components/contentTemplate';
 const ImgContainer = styled('div')`
   display: flex;
   flex: 0 0 auto;
+  scroll-snap-align: center;
+  scroll-behavior: smooth;
 
   width: 600px;
   height: 400px;
