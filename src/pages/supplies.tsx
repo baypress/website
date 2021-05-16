@@ -8,8 +8,7 @@ const ImgContainer = styled('div')`
   display: flex;
   flex: 0 0 auto;
 
-  width: 750px;
-  height: 500px;
+  width: 250px;
 `;
 
 const list = {
@@ -53,6 +52,7 @@ const HeroImage = (
   <StaticImage
     src="../images/supplies/1.jpg"
     height={300}
+    placeholder='blurred'
     aspectRatio={3 / 2}
     quality={100}
     formats={['AUTO', 'WEBP', 'AVIF']}

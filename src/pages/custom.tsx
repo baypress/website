@@ -30,10 +30,10 @@ const list = {
 } as const;
 
 const carouselImages = [
-  <ImgContainer key="c1"><StaticImage alt='' aspectRatio={3 / 2} src='../images/custom/1.jpg' /></ImgContainer>,
-  <ImgContainer key="c2"><StaticImage alt='' aspectRatio={3 / 2} src='../images/custom/2.jpg' /></ImgContainer>,
-  <ImgContainer key="c3"><StaticImage alt='' aspectRatio={3 / 2} src='../images/custom/3.jpg' /></ImgContainer>,
-  <ImgContainer key="c4"><StaticImage alt='' aspectRatio={3 / 2} src='../images/custom/4.jpg' /></ImgContainer>,
+  <ImgContainer key="c1"><StaticImage alt='' placeholder='blurred' aspectRatio={3 / 2} src='../images/custom/1.jpg' /></ImgContainer>,
+  <ImgContainer key="c2"><StaticImage alt='' placeholder='blurred' aspectRatio={3 / 2} src='../images/custom/2.jpg' /></ImgContainer>,
+  <ImgContainer key="c3"><StaticImage alt='' placeholder='blurred' aspectRatio={3 / 2} src='../images/custom/3.jpg' /></ImgContainer>,
+  <ImgContainer key="c4"><StaticImage alt='' placeholder='blurred' aspectRatio={3 / 2} src='../images/custom/4.jpg' /></ImgContainer>,
 ];
 
 const title = 'Custom Packaging & Print';
@@ -43,6 +43,7 @@ const HeroImage = (
     src="../images/custom/1.jpg"
     height={300}
     aspectRatio={3 / 2}
+    placeholder='blurred'
     quality={100}
     formats={['AUTO', 'WEBP', 'AVIF']}
     alt="Services"

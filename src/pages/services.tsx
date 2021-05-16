@@ -7,6 +7,8 @@ import ContentTemplate from '../components/contentTemplate';
 const ImgContainer = styled('div')`
   display: flex;
   flex: 0 0 auto;
+
+  width: 350px;
 `;
 
 const list = {
@@ -22,20 +24,19 @@ const list = {
 } as const;
 
 const carouselImages = [
-  <ImgContainer key="b1"><StaticImage alt='box1' width={600} height={320} src='../images/supplies/1.jpg' /></ImgContainer>,
-  <ImgContainer key="b2"><StaticImage alt='box2' width={600} height={320} src='../images/supplies/2.jpg' /></ImgContainer>,
-  <ImgContainer key="b3"><StaticImage alt='box3' width={600} height={320} src='../images/supplies/3.jpg' /></ImgContainer>,
-  <ImgContainer key="b4"><StaticImage alt='box4' width={600} height={320} src='../images/supplies/4.jpg' /></ImgContainer>,
-  <ImgContainer key="b5"><StaticImage alt='box5' width={600} height={320} src='../images/supplies/5.jpg' /></ImgContainer>,
+  <ImgContainer key="b1"><StaticImage alt='box1' aspectRatio={3 / 2} src='../images/services/1.jpg' /></ImgContainer>,
+  <ImgContainer key="b3"><StaticImage alt='box3' aspectRatio={3 / 2} src='../images/services/2.jpg' /></ImgContainer>,
+  <ImgContainer key="b4"><StaticImage alt='box4' aspectRatio={3 / 2} src='../images/services/3.jpg' /></ImgContainer>,
+  <ImgContainer key="b5"><StaticImage alt='box5' aspectRatio={3 / 2} src='../images/services/4.jpg' /></ImgContainer>,
 ];
 
 const title = 'Services';
 const description = `We provide sensible solutions and superior services from packaging design, ISTA testing, fast prototyping, mass production, assembly, to warehousing, inventory management and delivery. You can count on us from beginning of a project to delivery of the packaging products.`;
 const HeroImage = (
   <StaticImage
-    src="../images/supplies/1.jpg"
-    height={360}
+    src="../images/services/1.jpg"
     width={400}
+    aspectRatio={3 / 2}
     quality={100}
     formats={['AUTO', 'WEBP', 'AVIF']}
     alt="Services"
