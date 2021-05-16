@@ -8,8 +8,8 @@ export const theme = {
     black: '#000000',
   },
   font: {
-    book: `font-family: 'Avenir'; font-weight: 300;`,
-    heavy: `font-family: 'Avenir'; font-weight: 600;`,
+    book: `font-family: 'Avenir Book'; font-weight: 300;`,
+    heavy: `font-family: 'Avenir Heavy'; font-weight: 600;`,
   },
   size: {},
   spacing: {
