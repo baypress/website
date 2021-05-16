@@ -1,5 +1,5 @@
 import { useForm, ValidationError } from '@formspree/react';
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import Layout from '../components/layout';
@@ -113,12 +113,13 @@ const Submit = styled('input')`
   border: none;
   border-radius: 20px;
   margin: 3px 25px 0 0;
-  cursor: pointer;
+  cursor: ${({ disabled }) => disabled ? 'unset' : 'pointer'};
   width: 150px;
   justify-self: end;
+  opacity: ${({ disabled }) => disabled ? 0.3 : 1};
 
   &:hover {
-    background-color: ${theme.color.activeOrange};
+    background-color: ${({ disabled }) => disabled ? theme.color.orange : theme.color.activeOrange};
   }
 
   ${theme.font.heavy}
@@ -131,25 +132,47 @@ const ContactSuccess = styled('h1')`
   ${theme.font.heavy}
 `;
 
-const EmailForm = ({ handleSubmit, isEmailInvalid, isSubmitting }) => (
-  <form onSubmit={handleSubmit}>
-    <FormContainer>
-      <Input id="firstName" name="firstName" placeholder="First name" gridArea="first" />
-      <Input id="lastName" name="lastName" placeholder="Last name" gridArea="last" />
-      <Input id="phone" name="phone" type="tel" placeholder="Phone - Optional" gridArea="phone" />
-      <Input id="email" name="email" type="email" invalid={isEmailInvalid} placeholder="Email" gridArea="email" />
-      <Input id="company" name="company" placeholder="Company name - Optional" gridArea="company" />
-      <Input id="project" name="project" placeholder="Project name - Optional" gridArea="project" />
-      <Textarea id="details" name="details" placeholder="Brief description of your request." gridArea="details" />
-      <Submit type="submit" disabled={isSubmitting} />
-    </FormContainer>
-  </form>
-);
+const EmailForm = ({ handleSubmit, isSubmitting, errors }) => {
+  const [isEmailValid, setEmailValidity] = useState(true);
+  const emailInput = useRef();
+
+  const submit = e => {
+    if (emailInput && emailInput.current) {
+      // @ts-ignore
+      const emailValid = validateEmail(emailInput.current.value);
+      setEmailValidity(emailValid);
+
+      handleSubmit(e);
+    }
+  }
+
+  const onChange = (e) => {
+    const email = e.target.value;
+    const isValid = validateEmail(email);
+
+    setEmailValidity(isValid);
+  };
+
+  const validateEmail = email => !!email.match(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/);
+
+  return (
+    <form onSubmit={submit}>
+      <FormContainer>
+        <Input id="firstName" name="firstName" placeholder="First name" gridArea="first" />
+        <Input id="lastName" name="lastName" placeholder="Last name" gridArea="last" />
+        <Input id="phone" name="phone" type="tel" placeholder="Phone - Optional" gridArea="phone" />
+        <Input id="email" ref={emailInput} name="email" type="email" onChange={onChange} invalid={!isEmailValid} placeholder="Email" gridArea="email" />
+        <Input id="company" name="company" placeholder="Company name - Optional" gridArea="company" />
+        <Input id="project" name="project" placeholder="Project name - Optional" gridArea="project" />
+        <Textarea id="details" name="details" placeholder="Brief description of your request." gridArea="details" />
+        <Submit type="submit" disabled={isSubmitting || !isEmailValid} />
+      </FormContainer>
+    </form>
+  );
+};
 
 const ContactUs = (props) => {
   const [state, handleSubmit] = useForm(process.env.GATSBY_FORM_SPREE_PROJECT_ID);
-
-  const isEmailInvalid = state.errors.length ? state.errors[state.errors.length - 1]?.field === 'email' : false;
 
   return (
     <Layout>
@@ -164,7 +187,7 @@ const ContactUs = (props) => {
                 <>
                   <Title>Contact us</Title>
                   <Description><strong>Fill out this form</strong> or email <MailToLink href="mailto:contact@baypress.com">contact@baypress.com</MailToLink>.</Description>
-                  <EmailForm handleSubmit={handleSubmit} isEmailInvalid={isEmailInvalid} isSubmitting={state.submitting} />
+                  <EmailForm handleSubmit={handleSubmit} isSubmitting={state.submitting} errors={state.errors} />
                 </>
               )}
             </TextBlock>
