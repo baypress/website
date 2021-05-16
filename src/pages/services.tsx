@@ -5,8 +5,9 @@ import styled from 'styled-components';
 import ContentTemplate from '../components/contentTemplate';
 
 const ImgContainer = styled('div')`
-  display: flex;
-  flex: 0 0 auto;
+  /* display: flex;
+  flex: 0 0 auto; */
+  display: inline-block;
 
   width: 350px;
 `;

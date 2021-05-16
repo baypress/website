@@ -6,6 +6,11 @@ const Container = styled('div')`
   flex-wrap: nowrap;
   overflow: auto;
   -ms-overflow-style: -ms-autohiding-scrollbar;
+
+  &::before, &::after {
+    content: '';
+    margin: auto;
+  }
 `;
 
 const Carousel = ({ images }) => {
