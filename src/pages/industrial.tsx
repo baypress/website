@@ -29,11 +29,9 @@ const list = {
 const carouselImages = [
   <ImgContainer key="b1" ><StaticImage alt='box1' placeholder='blurred' aspectRatio={3 / 2} src='../images/industrial/1.jpg' /></ImgContainer>,
   <ImgContainer key="b2" ><StaticImage alt='box2' placeholder='blurred' aspectRatio={3 / 2} src='../images/industrial/2.jpg' /></ImgContainer>,
-  <ImgContainer key="b3"><StaticImage alt='box3' placeholder='blurred' height={300} width={900} objectPosition='60%' src='../images/industrial/3.jpg' /></ImgContainer>,
-  <ImgContainer key="b4" ><StaticImage alt='box4' placeholder='blurred' style={{
-    filter: 'brightness(110%) saturation(120%)',
-  }} height={400} width={800} objectPosition='60%' src='../images/industrial/4.jpg' /></ImgContainer>,
-  <ImgContainer key="b5" ><StaticImage alt='box5' placeholder='blurred' height={450} width={900} objectPosition='40% 20%' src='../images/industrial/5.jpg' /></ImgContainer>,
+  <ImgContainer key="b3"><StaticImage alt='box3' placeholder='blurred' aspectRatio={3 / 2} src='../images/industrial/3.jpg' /></ImgContainer>,
+  <ImgContainer key="b5" ><StaticImage alt='box5' placeholder='blurred' aspectRatio={3 / 2} src='../images/industrial/41.jpg' /></ImgContainer>,
+  <ImgContainer key="b6" ><StaticImage alt='box6' placeholder='blurred' aspectRatio={3 / 2} src='../images/industrial/6.jpg' /></ImgContainer>,
 ];
 
 const title = 'Industrial Packaging';
