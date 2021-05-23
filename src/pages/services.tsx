@@ -33,7 +33,7 @@ const carouselImages = [
 ];
 
 const title = 'Services';
-const description = `We provide sensible solutions and superior services from packaging design, ISTA testing, fast prototyping, mass production, assembly, to warehousing, inventory management and delivery. You can count on us from beginning of a project to delivery of the packaging products.`;
+const description = `We offer end-to-end services from packaging design, ISTA testing, fast prototyping, mass production, assembly, to warehousing, inventory management and delivery. You can count on us from the ideation of a project through delivery of the final products.`;
 const HeroImage = (
   <StaticImage
     src="../images/services/1.jpg"

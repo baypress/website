@@ -35,7 +35,7 @@ const carouselImages = [
 ];
 
 const title = 'Industrial Packaging';
-const description = `With multi-material packaging design ability, we provide our clients with sensible packaging solutions optimized for each project no matter if it is for product transportation, material handling, or storage. We provide complete services from design, prototyping, ISTA testing, manufacturing, kitting, to inventory management.`;
+const description = `With the ability to design multi-material packaging systems, we provide our clients with sensible solutions optimized for each project, including product transportation, material handling, or storage. We provide complete services from design, prototyping, ISTA testing, manufacturing, kitting, to inventory management.`;
 const HeroImage = (
   <StaticImage
     src="../images/industrial/1.jpg"
