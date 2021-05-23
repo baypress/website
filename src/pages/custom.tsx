@@ -39,7 +39,7 @@ const carouselImages = [
 ];
 
 const title = 'Custom Packaging & Print';
-const description = `Bay Press and Packaging has years of experience in product packaging, display, and printing services. We have many choices of material and technologies to satisfy our customer's needs.`;
+const description = `Bay Press and Packaging has decades of experience in product packaging, display, and printing services. We have many choices of materials and technologies to satisfy our customers' needs.`;
 const HeroImage = (
   <StaticImage
     src="../images/custom/1.jpg"

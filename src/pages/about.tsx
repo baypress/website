@@ -62,8 +62,8 @@ const AboutUs = (props) => {
             <TextBlock>
               <Title>About us</Title>
               <Description>Bay Press and Packaging believes that our customers come first.</Description>
-              <Description>We have built a corporate culture of professionalism, dedication, and exibility, so that we can meet and exceed our customers’ expectations consistently. Continuing improvement is an indispensable factor in a long-term business relationship.</Description>
-              <Description>Since founded in 1993, we know it is just the beginning when products leave our shipping dock, so we pay special attention to customers’ feedback and take prompt action to respond to their needs. Our great reputation brings us customers, but our ability to meet their needs and our culture of responsiveness keep them coming back.</Description>
+              <Description>Since our founding in 1993, we have cultivated a corporate culture of professionalism, dedication, and flexibility to meet and exceed our customers’ expectations every day.</Description>
+              <Description>We know it is just the beginning when our products leave the shipping dock. We pay close attention to feedback and respond swiftly to our customers' needs. Consistency and constant improvement are the keys to our long-term business relationships. Customers find us through our great reputation in the marketplace, but our ability to meet their needs and our culture of responsiveness keep them coming back.</Description>
             </TextBlock>
             <LogoIcon />
           </HeaderContainer>

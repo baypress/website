@@ -83,7 +83,7 @@ const LocationIcon = styled(LocationSvg)`
 const IndexPage = (props) => {
   return (
     <Layout>
-      <Seo title="Home" />
+      <Seo title="Bay Press and Packaging" />
       <div style={{ display: "grid" }}>
         <StaticImage
           style={{
