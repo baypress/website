@@ -49,7 +49,7 @@ const carouselImages = [
 ];
 
 const title = 'Shipping Supplies';
-const description = `We have over 20 years of experience in providing custom protective packaging products to clients in many industries such as electronics, medical instruments, and food services. We provide the highest-quality packaging solutions with end-to-end services from design, testing, production, to warehousing and delivery.`;
+const description = `As a one-stop source, we stock and distribute a full array of quality supplies to meet your packaging and shipping needs, all while providing competitive pricing and fast delivery.`
 const HeroImage = (
   <StaticImage
     src="../images/supplies/1.jpg"
