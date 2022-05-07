@@ -24,7 +24,7 @@ const Spacing = styled('div')`
 `;
 
 const Title = styled('h1')`
-  width: 530px;
+  max-width: 530px;
   font-size: 3.2rem;
   color: ${theme.color.white};
 
@@ -34,6 +34,23 @@ const Title = styled('h1')`
 const CardContainer = styled('section')`
   display: flex;
   justify-content: space-between;
+
+  @media only screen
+    and (max-width: 970px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const BgContainer = styled('div')`
+  position: relative;
+  grid-area: 1/1;
+  max-height: max(710px, 100vh - 290px);
+
+  @media only screen
+    and (max-width: 970px) {
+    display: none;
+  }
 `;
 
 const Card = styled('div')`
@@ -44,6 +61,24 @@ const Card = styled('div')`
   padding: 0 24px;
   align-items: center;
   justify-content: space-between;
+
+  @media only screen
+    and (max-width: 970px) {
+    margin-bottom: 20px;
+  }
+`;
+
+const SmallScreenBG = styled('div')`
+  position: absolute;
+  display: none;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+
+  @media only screen
+    and (max-width: 970px) {
+    display: block;
+  }
 `;
 
 const CardBG = styled(Card)`
@@ -84,19 +119,22 @@ const IndexPage = (props) => {
   return (
     <Layout>
       <Seo title="Bay Press and Packaging" />
-      <div style={{ display: "grid" }}>
-        <StaticImage
-          style={{
-            gridArea: "1/1",
-            maxHeight: 'max(710px, 100vh - 290px)',
-            filter: 'brightness(62%) saturate(130%)',
-          }}
-          placeholder="blurred"
-          layout="fullWidth"
-          alt="hero package"
-          src="../images/home-hero2.jpg"
-          formats={["webp", "avif"]}
-        />
+      <div style={{ display: "grid", position: "relative" }}>
+        <SmallScreenBG />
+        <BgContainer>
+          <StaticImage
+            style={{
+              gridArea: "1/1",
+              maxHeight: 'max(710px, 100vh - 290px)',
+              filter: 'brightness(62%) saturate(130%)',
+            }}
+            placeholder="blurred"
+            layout="fullWidth"
+            alt="hero package"
+            src="../images/home-hero2.jpg"
+            formats={["webp", "avif"]}
+          />
+        </BgContainer>
         <ContentContainer>
           <Spacing>
             <Title>Custom packaging solutions & shipping supplies</Title>
