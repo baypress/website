@@ -32,15 +32,20 @@ const NavButton = styled(RightChevronSvg)`
   border-radius: 50%;
   cursor: pointer;
   z-index: 1;
+  opacity: 0.6;
+
+  &:hover {
+    opacity: 1;
+  }
 `;
 
 const LeftNavBtn = styled(NavButton)`
-  left: 40px;
-  transform: rotate(180deg);
+  left: 5%;
+  transform: translateY(-50%) rotate(180deg);
 `;
 
 const RightNavBtn = styled(NavButton)`
-  right: 40px;
+  right: 5%;
 `;
 
 

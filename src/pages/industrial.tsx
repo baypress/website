@@ -10,8 +10,13 @@ const ImgContainer = styled('div')`
   scroll-snap-align: center;
   scroll-behavior: smooth;
 
-  width: 600px;
-  height: 400px;
+  max-width: 600px;
+  max-height: 400px;
+
+  @media only screen
+    and (max-width: 970px) {
+    max-width: 100%;
+  }
 `;
 
 const list = {

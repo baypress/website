@@ -7,7 +7,7 @@ import Layout from '../components/layout';
 import Seo from '../components/seo';
 
 const Title = styled('h1')`
-  width: 260px;
+  max-width: 260px;
   font-size: 30px;
 
   ${theme.font.heavy}
@@ -34,12 +34,20 @@ const TextBlock = styled('div')`
   flex: 1 1 0%;
   flex-direction: column;
   justify-content: center;
+  padding-top: 20px;
   margin-right: 1rem;
 `;
 
 const ListBlock = styled('section')`
   color: ${theme.color.white};
   background-color: ${theme.color.purple};
+`;
+
+const SmallScreenContainer = styled('div')`
+  @media only screen
+    and (max-width: 970px) {
+    display: none;
+  }
 `;
 
 const List = styled('div')`
@@ -49,6 +57,11 @@ const List = styled('div')`
   grid-template-rows: repeat(3, 40px);
   justify-content: space-between;
   font-size: 18px;
+
+  @media only screen
+    and (max-width: 970px) {
+    grid-template-columns: repeat(2, ${({ columns }) => 100 / columns}%);
+  }
 
   ${theme.font.heavy}
 `;
@@ -70,7 +83,9 @@ const ContentTemplate = (props) => {
               <Title>{props.title}</Title>
               <Description>{props.description}</Description>
             </TextBlock>
-            {props.heroImage}
+            <SmallScreenContainer>
+              {props.heroImage}
+            </SmallScreenContainer>
           </HeaderContainer>
         </Spacing>
       </TopBlock>
