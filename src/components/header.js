@@ -3,12 +3,19 @@ import React from "react";
 import styled from 'styled-components';
 
 import LogoSvg from '../images/icon.svg';
+import NavBar from './navBar';
 import { theme } from '../theme';
 
 const Spacing = styled('div')`
   padding: ${theme.spacing.layout.padding};
   max-width: ${theme.spacing.layout.maxWidth};
   margin: ${theme.spacing.layout.margin};
+
+  @media only screen
+    and (max-width: 748px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 `;
 
 const LogoAndContact = styled('div')`
@@ -18,17 +25,45 @@ const LogoAndContact = styled('div')`
   align-items: center;
 `;
 
-const NavButton = styled('button')`
-  margin-right: 30px;
-  background-color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-  ${theme.font.heavy}
-  color: ${({ selected }) => selected ? '#6e26ec' : '#4b463e'};
+const HamburgerBtn = styled('div')`
+  display: none;
+  position: relative;
+
+  height: 32px;
+  width: 32px;
 
   &:hover {
-    color: #6e26ec;
+    cursor: pointer;
+  }
+
+  @media only screen
+    and (max-width: 748px) {
+    display: block;
+  }
+
+  & > span {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 10%;
+
+    transition: all 0.2s;
+    background-color: #333231;
+
+    &:nth-child(1) {
+      top: 5px;
+      transform: ${({ isMenuOpen }) => isMenuOpen ? 'translateY(9px) rotate(45deg)' : ''};
+    }
+
+    &:nth-child(2) {
+      top: 14px;
+      display: ${({ isMenuOpen }) => isMenuOpen ? 'none' : 'block'};
+    }
+
+    &:nth-child(3) {
+      top: 23px;
+      transform: ${({ isMenuOpen }) => isMenuOpen ? 'translateY(-9px) rotate(-45deg)' : ''};
+    }
   }
 `;
 
@@ -57,11 +92,9 @@ const paths = {
   about: '/about',
 }
 
-const Header = ({ siteTitle }) => {
+const Header = ({ setIsMenuOpen, isMenuOpen }) => {
   const isBrowser = typeof window !== "undefined";
   if (!isBrowser) return null;
-
-  const currentPath = window.location.pathname;
 
   return (
     <header>
@@ -73,24 +106,13 @@ const Header = ({ siteTitle }) => {
           <Link to={paths.contact}>
             <ContactButton>Contact us</ContactButton>
           </Link>
+          <HamburgerBtn isMenuOpen={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <span />
+            <span />
+            <span />
+          </HamburgerBtn>
         </LogoAndContact>
-        <div>
-          <Link to={paths.custom}>
-            <NavButton selected={currentPath === paths.custom}>Custom Packaging & Print</NavButton>
-          </Link>
-          <Link to={paths.industrial}>
-            <NavButton selected={currentPath === paths.industrial}>Industrial Packaging</NavButton>
-          </Link>
-          <Link to={paths.supplies}>
-            <NavButton selected={currentPath === paths.supplies}>Shipping Supplies</NavButton>
-          </Link>
-          <Link to={paths.services}>
-            <NavButton selected={currentPath === paths.services}>Services</NavButton>
-          </Link>
-          <Link to={paths.about}>
-            <NavButton selected={currentPath === paths.about}>About Us</NavButton>
-          </Link>
-        </div>
+        <NavBar />
       </Spacing>
     </header >
   );
