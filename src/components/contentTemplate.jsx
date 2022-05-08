@@ -44,6 +44,8 @@ const ListBlock = styled('section')`
 `;
 
 const SmallScreenContainer = styled('div')`
+  display: flex;
+
   @media only screen
     and (max-width: 760px) {
     display: none;

@@ -19,6 +19,11 @@ const Description = styled('p')`
   padding-right: 4.2rem;
   margin-bottom: 1rem;
 
+  @media only screen
+    and (max-width: 600px) {
+    padding-right: 0;
+  }
+
   ${theme.font.book}
 `;
 
@@ -50,6 +55,11 @@ const LogoIcon = styled(BigLogoSvg)`
   width: 300px;
   height: 300px;
   opacity: 0.4;
+
+  @media only screen
+    and (max-width: 600px) {
+    display: none;
+  }
 `;
 
 const AboutUs = (props) => {
