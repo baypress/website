@@ -35,7 +35,7 @@ const NavButton = styled(RightChevronSvg)`
   opacity: 0.6;
 
   &:hover {
-    opacity: 1;
+    opacity: .85;
   }
 `;
 
