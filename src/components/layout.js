@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from 'styled-components';
 
 import Footer from './footer';
@@ -52,22 +52,6 @@ const Layout = ({ children }) => {
   `)
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const handleResize = () => {
-    if (window?.innerWidth > 750) {
-      setIsMenuOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    if (window) {
-      window.addEventListener('resize', handleResize);
-
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }
-  }, [!!window])
 
   return (
     <Container isMenuOpen={isMenuOpen}>
