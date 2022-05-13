@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from 'styled-components';
 
 import Footer from './footer';
@@ -32,7 +32,7 @@ const HamburgerMenu = styled('div')`
   position: fixed;
   height: calc(100% - 64px);
   width: 100%;
-  top: 70px;
+  top: 64px;
   left: ${({ isMenuOpen }) => isMenuOpen ? '0' : '100%'};
 
   background-color: #333231;
@@ -52,25 +52,6 @@ const Layout = ({ children }) => {
   `)
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  const handleResize = () => {
-    setWindowWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [])
-
-  useEffect(() => {
-    if (windowWidth < 750) {
-      setIsMenuOpen(false);
-    }
-  }, [setIsMenuOpen, windowWidth]);
 
   return (
     <Container isMenuOpen={isMenuOpen}>
