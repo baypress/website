@@ -52,10 +52,11 @@ const Layout = ({ children }) => {
   `)
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window?.innerWidth || 0);
 
   const handleResize = () => {
-    setWindowWidth(window.innerWidth);
+    if (window?.innerWidth > 750) {
+      setIsMenuOpen(false);
+    }
   };
 
   useEffect(() => {
@@ -67,12 +68,6 @@ const Layout = ({ children }) => {
       };
     }
   }, [!!window])
-
-  useEffect(() => {
-    if (windowWidth < 750) {
-      setIsMenuOpen(false);
-    }
-  }, [setIsMenuOpen, windowWidth]);
 
   return (
     <Container isMenuOpen={isMenuOpen}>
