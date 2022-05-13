@@ -14,20 +14,37 @@ const Container = styled('div')`
   max-width: ${theme.spacing.layout.maxWidth};
   margin: ${theme.spacing.layout.margin};
   background-color: ${theme.color.white};
-
   color: ${theme.color.darkPurple};
+
+  @media only screen
+    and (max-width: 748px) {
+    flex-direction: column;
+    align-items: start;
+    padding: 30px;
+    gap: 20px;
+  }
 `;
 
 const LogoContainer = styled('div')`
   flex: 2;
+  @media only screen
+    and (max-width: 748px) {
+    order: 1;
+    padding-top: 20px;
+  }
 `;
 
 const Address = styled('div')`
   display: flex;
   flex-direction: column;
   flex: 3;
-
   font-size: 14px;
+
+  @media only screen
+    and (max-width: 748px) {
+    order: 3;
+    padding-bottom: 20px;
+  }
 `;
 
 const Line1 = styled('div')`
@@ -48,10 +65,29 @@ const ContactContainer = styled('div')`
   flex: 2;
 `;
 
+const CallContainer = styled(ContactContainer)`
+  @media only screen
+    and (max-width: 748px) {
+    order: 2;
+  }
+`;
+
+const FaxContainer = styled(ContactContainer)`
+  @media only screen
+    and (max-width: 748px) {
+    display: none;
+  }
+`;
+
 
 const ContactTitle = styled('div')`
   font-size: 14px;
   margin-bottom: 12px;
+
+  @media only screen
+    and (max-width: 748px) {
+    display: none;
+  }
 
   ${theme.font.heavy}
 `;
@@ -75,14 +111,14 @@ const Footer = ({ siteTitle }) => (
       <Line2>568 South Milpitas Blvd.</Line2>
       <Line3>Milpitas, CA 95035</Line3>
     </Address>
-    <ContactContainer>
+    <CallContainer>
       <ContactTitle>Call Us</ContactTitle>
       <ContactNumber>408-942-7088</ContactNumber>
-    </ContactContainer>
-    <ContactContainer>
+    </CallContainer>
+    <FaxContainer>
       <ContactTitle>Fax Us</ContactTitle>
       <ContactNumber>408-942-7319</ContactNumber>
-    </ContactContainer>
+    </FaxContainer>
   </Container>
 );
 

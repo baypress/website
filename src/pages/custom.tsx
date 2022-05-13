@@ -1,4 +1,4 @@
-import { StaticImage } from 'gatsby-plugin-image';
+import { StaticImage, IImage } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -10,8 +10,13 @@ const ImgContainer = styled('div')`
   scroll-snap-align: center;
   scroll-behavior: smooth;
 
-  width: 750px;
-  height: 500px;
+  max-width: 750px;
+  max-height: 500px;
+
+  @media only screen
+    and (max-width: 970px) {
+    max-width: 100%;
+  }
 `;
 
 const list = {

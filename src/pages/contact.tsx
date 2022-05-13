@@ -29,6 +29,11 @@ const TopBlock = styled('section')`
 const HeaderContainer = styled('div')`
   display: flex;
   padding: 60px 0;
+
+  @media only screen
+    and (max-width: 748px) {
+    flex-direction: column;
+  }
 `;
 
 const TextBlock = styled('div')`
@@ -74,6 +79,19 @@ const FormContainer = styled('div')`
     "company project"
     "details details"
     ". submit";
+
+  @media only screen
+    and (max-width: 748px) {
+    grid-template-areas:
+    "first first"
+    "last last"
+    "phone phone"
+    "email email"
+    "company company"
+    "project project"
+    "details details"
+    ". submit";
+  }
 `;
 
 const FormItemStyle = ({ gridArea, invalid }) => `
@@ -133,7 +151,7 @@ const ContactSuccess = styled('h1')`
 `;
 
 const EmailForm = ({ handleSubmit, isSubmitting, errors }) => {
-  const [isEmailValid, setEmailValidity] = useState(true);
+  const [isEmailValid, setEmailValidity] = useState(false);
   const emailInput = useRef();
 
   const submit = e => {
