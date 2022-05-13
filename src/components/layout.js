@@ -32,7 +32,7 @@ const HamburgerMenu = styled('div')`
   position: fixed;
   height: calc(100% - 64px);
   width: 100%;
-  top: 70px;
+  top: 64px;
   left: ${({ isMenuOpen }) => isMenuOpen ? '0' : '100%'};
 
   background-color: #333231;
@@ -52,19 +52,21 @@ const Layout = ({ children }) => {
   `)
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(window?.innerWidth || 0);
 
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
   };
 
   useEffect(() => {
-    window.addEventListener('resize', handleResize);
+    if (window) {
+      window.addEventListener('resize', handleResize);
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [])
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
+  }, [!!window])
 
   useEffect(() => {
     if (windowWidth < 750) {
