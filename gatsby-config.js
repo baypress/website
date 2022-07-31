@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Bay Press & Packaging`,
-    description: `placeholder description`,
-    author: `@kang`,
+    description: `End-to-end custom packaging service including design, testing, warehousing, and J.I.T. Delivery`,
+    siteUrl: `https://www.baypress.com`,
+    keywords: ['Baypress', 'Bay Press', 'Bay Press & Packaging', 'packaging', 'custom packaging', 'custom packaging solutions', 'shipping supplies', 'packaging design', 'ISTA testing', 'warehousing'],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

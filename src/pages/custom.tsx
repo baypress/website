@@ -60,11 +60,13 @@ const HeroImage = (
 const CCP = (props) => {
   return (
     <ContentTemplate
+      {...props}
       carouselImages={carouselImages}
       list={list}
       title={title}
       description={description}
       heroImage={HeroImage}
+      location
     />
   )
 };

@@ -88,7 +88,7 @@ const Spacing = styled('div')`
 const ContentTemplate = (props) => {
   return (
     <Layout>
-      <Seo title={props.title} />
+      <Seo title={props.title} pathname={props.location.pathname} />
       <TopBlock>
         <Spacing>
           <HeaderContainer>

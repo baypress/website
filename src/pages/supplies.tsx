@@ -70,6 +70,7 @@ const HeroImage = (
 const Supplies = (props) => {
   return (
     <ContentTemplate
+      {...props}
       carouselImages={carouselImages}
       list={list}
       title={title}
