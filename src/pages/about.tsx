@@ -65,7 +65,7 @@ const LogoIcon = styled(BigLogoSvg)`
 const AboutUs = (props) => {
   return (
     <Layout>
-      <Seo title="About us" />
+      <Seo title="About us" pathname={props.location.pathname} />
       <TopBlock>
         <Spacing>
           <HeaderContainer>

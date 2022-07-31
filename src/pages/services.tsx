@@ -53,6 +53,7 @@ const HeroImage = (
 const Services = (props) => {
   return (
     <ContentTemplate
+      {...props}
       carouselImages={carouselImages}
       list={list}
       title={title}

@@ -194,7 +194,7 @@ const ContactUs = (props) => {
 
   return (
     <Layout>
-      <Seo title="Contact us" />
+      <Seo title="Contact us" pathname={props.location.pathname} />
       <TopBlock>
         <Spacing>
           <HeaderContainer>

@@ -1,3 +1,5 @@
+import { graphql, useStaticQuery } from "gatsby"
+import PropTypes from "prop-types"
 /**
  * SEO component that queries for data with
  *  Gatsby's useStaticQuery React hook
@@ -6,11 +8,9 @@
  */
 
 import * as React from "react"
-import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
 
-function Seo({ description, lang, meta, title }) {
+function Seo({ description, lang, meta, title, pathname, homeTitle }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -18,7 +18,8 @@ function Seo({ description, lang, meta, title }) {
           siteMetadata {
             title
             description
-            author
+            keywords
+            siteUrl
           }
         }
       }
@@ -27,14 +28,26 @@ function Seo({ description, lang, meta, title }) {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
+  const defaultTitleTemplate = defaultTitle ? `%s | ${defaultTitle}` : null;
+  const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      title={homeTitle || title}
+      titleTemplate={homeTitle ? homeTitle : defaultTitleTemplate}
+      link={
+        canonical
+          ? [
+            {
+              rel: "canonical",
+              href: canonical,
+            },
+          ]
+          : []
+      }
       meta={[
         {
           name: `description`,
@@ -43,6 +56,10 @@ function Seo({ description, lang, meta, title }) {
         {
           property: `og:title`,
           content: title,
+        },
+        {
+          name: "keywords",
+          content: site.siteMetadata.keywords.join(","),
         },
         {
           property: `og:description`,
@@ -68,6 +85,8 @@ Seo.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  pathname: PropTypes.string,
+  homeTitle: PropTypes.string,
 }
 
 export default Seo

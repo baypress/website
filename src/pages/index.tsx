@@ -2,13 +2,12 @@ import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
 
-import { theme } from '../theme';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
-
 import DesignSvg from '../images/designTestingWarehouse.svg';
-import SolutionsSvg from '../images/solutions.svg';
 import LocationSvg from '../images/location.svg';
+import SolutionsSvg from '../images/solutions.svg';
+import { theme } from '../theme';
 
 const ContentContainer = styled('div')`
   grid-area: 1/1;
@@ -118,7 +117,7 @@ const LocationIcon = styled(LocationSvg)`
 const IndexPage = (props) => {
   return (
     <Layout>
-      <Seo title="Bay Press and Packaging" />
+      <Seo homeTitle="Bay Press and Packaging: Custom packaging solutions" pathname={props.location.pathname} />
       <div style={{ display: "grid", position: "relative" }}>
         <SmallScreenBG />
         <BgContainer>
