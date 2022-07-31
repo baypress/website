@@ -2,13 +2,13 @@ import { Link } from 'gatsby';
 import React from "react";
 import styled from 'styled-components';
 
-import { theme } from '../theme';
 import BigLogoSvg from '../images/bigLogo.svg';
+import { theme } from '../theme';
 
 const Container = styled('div')`
   display: flex;
   align-items: center;
-  height: 190px;
+  min-height: 190px;
   padding: ${theme.spacing.layout.padding};
   width: 100%;
   max-width: ${theme.spacing.layout.maxWidth};

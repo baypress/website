@@ -9,9 +9,10 @@ import NavBar from './navBar';
 import "./layout.css";
 
 const Container = styled('div')`
+  position: absolute;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100%;
   width: 100vw;
 
   overflow-x: hidden;
