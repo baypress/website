@@ -211,8 +211,8 @@ const ContactUs = (props) => {
             </TextBlock>
             <LocationBlock>
               <LocationTitle>We are located at</LocationTitle>
-              <LocationDescription>568 South Milpitas Blvd.<br></br>Milpitas, CA 95035</LocationDescription>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.4659513923857!2d-121.89650368504046!3d37.42609597982444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fced1bb864b31%3A0xed4a5c25a6842da1!2s568%20S%20Milpitas%20Blvd%2C%20Milpitas%2C%20CA%2095035!5e0!3m2!1sen!2sus!4v1620576565781!5m2!1sen!2sus" width="250" height="250" style={{ border: '0' }} loading="lazy" />
+              <LocationDescription>4547 Enterprise St<br></br>Fremont, CA 94538</LocationDescription>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.1678958866014!2d-121.96230612381646!3d37.50395807205494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fc710918572a1%3A0x868128c5ee4b08cb!2s4547%20Enterprise%20St%2C%20Fremont%2C%20CA%2094538!5e0!3m2!1sen!2sus!4v1682267343306!5m2!1sen!2sus" width="250" height="250" style={{ border: '0' }} loading="lazy" />
             </LocationBlock>
           </HeaderContainer>
         </Spacing>
