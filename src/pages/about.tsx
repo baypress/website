@@ -77,14 +77,14 @@ const AboutUs = (props) => {
             </TextBlock>
             <LogoIcon />
           </HeaderContainer>
-          <StaticImage
+          {/* <StaticImage
             alt="building"
             src="../images/building.png"
             placeholder="blurred"
             style={{
               marginBottom: '40px'
             }}
-          />
+          /> */}
         </Spacing>
       </TopBlock>
     </Layout>
