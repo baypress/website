@@ -108,8 +108,8 @@ const Footer = ({ siteTitle }) => (
     </LogoContainer>
     <Address>
       <Line1>Bay Press and Packaging, Inc.</Line1>
-      <Line2>568 South Milpitas Blvd.</Line2>
-      <Line3>Milpitas, CA 95035</Line3>
+      <Line2>4547 Enterprise St</Line2>
+      <Line3>Fremont, CA 94538</Line3>
     </Address>
     <CallContainer>
       <ContactTitle>Call Us</ContactTitle>
