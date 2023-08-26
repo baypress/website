@@ -4,9 +4,9 @@
 
 This is the repo for baypress.com.
 
-### Tech ###
+### Tech
 
-The site is built on gatsby with react and deployed to gatsby-cloud hosting.
+The site is built on gatsby with react and deployed to netlify hosting.
 We're using styled-components for styling and have built a custom theme.
 We're using Form Spree for the contact form.
 
@@ -15,16 +15,20 @@ We're using Form Spree for the contact form.
 1.  **Install dependencies.**
 
     Make sure to use the correct version of node
+
     ```shell
     nvm use
     ```
+
     then
+
     ```shell
     yarn
     ```
+
     **We're using yarn in this project!!**
 
-    *The dependencies are locked with the yarn.lock file.*
+    _The dependencies are locked with the yarn.lock file._
 
 1.  **Start developing.**
 
@@ -38,4 +42,4 @@ We're using Form Spree for the contact form.
 
 ## 🛫 Deployment
 
-The site is automatically deployed to gatsby cloud when we make a change to the "main" branch.
+The site is automatically deployed to netlify when we make a change to the "main" branch.
