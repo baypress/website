@@ -141,7 +141,7 @@ const IndexPage = (props) => {
               <Card>
                 <CardBG />
                 <DesignIcon />
-                <CardText>End-to-end service including design, testing, warehousing, and J.I.T. Delivery..</CardText>
+                <CardText>End-to-end service including design, testing, warehousing, and J.I.T. Delivery.</CardText>
               </Card>
               <Card>
                 <CardBG />
